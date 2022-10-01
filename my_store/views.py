@@ -17,9 +17,12 @@ def about_page(request):
     }
     return render(request, 'about/view.html', context)
 
-def contact_page(request): 
+
+def contact_page(request):
     context = {
         "title": "Página de contato",
         "content": "Bem vindo a página de contato"
     }
+    if request.method == "POST":
+        print(request.POST)
     return render(request, 'contact/view.html', context)
